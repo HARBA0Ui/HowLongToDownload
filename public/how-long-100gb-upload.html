@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How long does a 1GB upload take? Estimate 1GB upload time at any upload speed.">
-  <meta name="keywords" content="1GB upload time, 1 gigabyte upload, 1GB upload calculator">
+  <meta name="description"
+    content="How long does a 100GB upload take? Calculate exact upload times for 100GB files on any upload speed. Includes examples and optimization tips.">
+  <meta name="keywords" content="100GB upload time, how long does 100GB upload, upload calculator">
   <meta name="author" content="HowLongToDownload">
-  <title>How Long Does a 1GB Upload Take? | HowLongToDownload Calculator</title>
-  <link rel="canonical" href="https://example.com/how-long-1gb-upload.html">
-  <link rel="stylesheet" href="../assets/app.css">
+  <title>How Long Does a 100GB Upload Take? | HowLongToDownload Calculator</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How Long Does a 100GB Upload Take?">
+  <meta property="og:description"
+    content="Instant calculator to find out exactly how long a 100GB file will take to upload.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/how-long-100gb-upload.html">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://example.com/how-long-100gb-upload.html">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="app.css">
 
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="How Long Does a 1GB Upload Take? | HowLongToDownload Calculator">
-  <meta property="og:description" content="How long does a 1GB upload take? Estimate 1GB upload time at any upload speed.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/how-long-1gb-upload.html">
   <meta property="og:site_name" content="HowLongToDownload">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How Long Does a 1GB Upload Take? | HowLongToDownload Calculator">
-  <meta name="twitter:description" content="How long does a 1GB upload take? Estimate 1GB upload time at any upload speed.">
+  <meta name="twitter:title" content="How Long Does a 100GB Upload Take? | HowLongToDownload Calculator">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,34 +34,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How long does a 1GB upload take at 10 Mbps?",
+      "name": "Why is my upload slower than download?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About 13m 39s at a steady 10 Mbps upload speed."
+        "text": "Most plans are asymmetrical, offering much lower upstream bandwidth. Cable often tops out at 10-40 Mbps upload, while fiber plans may be symmetrical. Always enter your measured upload speed."
       }
     },
     {
       "@type": "Question",
-      "name": "Is 1GB a lot to upload?",
+      "name": "Can I upload while doing other tasks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is manageable on most connections, but slower upload speeds can still take 10-20 minutes."
+        "text": "You can, but other upstream-heavy tasks (video calls, cloud syncs) will extend the upload time. Pausing them yields the most accurate estimate."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I upload while using the internet?",
+      "name": "Does compression help?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, but video calls or cloud syncs can slow the upload. Pause heavy apps for best results."
+        "text": "Yes, if the data compresses well. RAW video and already compressed media will see minor gains, while documents and project files can shrink significantly."
       }
     },
     {
       "@type": "Question",
-      "name": "What speed should I enter?",
+      "name": "What if my upload fails halfway?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use the upload value from a recent speed test, not the advertised download speed."
+        "text": "Use resumable upload tools (S3 multipart, Google Drive resumable, rsync) so interrupted uploads continue from the last completed chunk."
       }
     }
   ]
@@ -93,28 +101,30 @@
   <header class="page-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="upload-time-calculator.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="index.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
-          Back to Upload Calculator
+          Back to Calculator
         </a>
       </div>
       <h1 class="page-title" style="text-align: center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
           <polyline points="7 10 12 5 17 10" />
           <line x1="12" y1="5" x2="12" y2="17" />
         </svg>
-        How Long Does a 1GB Upload Take?
+        How Long Does a 100GB Upload Take?
       </h1>
     </div>
   </header>
 
   <main class="container page-content">
 
-    <!-- Calculator -->
-    <section id="calculator" class="calculator-section">
+    <!-- Pre-filled Calculator -->
+    <section class="calculator-section">
       <div class="section-header">
         <div class="section-badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -124,12 +134,12 @@
           </svg>
           <span>Calculator</span>
         </div>
-        <h2 class="section-title">1GB Upload Time Calculator</h2>
-        <p class="page-subtitle">Estimate how long 1GB takes to upload</p>
+        <h2 class="section-title">100GB Upload Time Calculator</h2>
+        <p class="page-subtitle">Calculate precise upload times for 100GB files</p>
       </div>
 
       <div class="calculator-card">
-        <form id="calculator-form" data-file-size="1" data-unit="GB" data-speed="50" data-mode="upload">
+        <form id="calculator-form" data-file-size="100" data-unit="GB" data-speed="50" data-mode="upload">
           <div class="form-row">
             <div class="form-group">
               <label for="file-size">
@@ -140,7 +150,7 @@
                 File Size
               </label>
               <div class="input-group">
-                <input type="number" id="file-size" name="file-size" placeholder="1" min="0.01" step="0.01" required>
+                <input type="number" id="file-size" name="file-size" placeholder="100" min="0.01" step="0.01" required>
                 <select id="unit" name="unit" class="unit-select">
                   <option value="MB">MB</option>
                   <option value="GB" selected>GB</option>
@@ -229,144 +239,176 @@
       </div>
     </section>
 
+    <!-- Ad Placeholder -->
+    <div class="ad-space">
+    </div>
+
     <!-- Introduction -->
     <section class="content-section">
-      <h2>1GB Upload Time</h2>
-      <p>A 1GB upload is a small but noticeable transfer. Think of a short HD video, a photo batch, or a compressed project folder. Use the calculator below to estimate the time based on your real upload speed.</p>
+      <h2>Understanding 100GB Upload Times</h2>
+      <p>A 100GB upload is massive - think of a full disk image, a RAW video archive, or offsite backups. Upload speed is often far slower than download speed, so knowing the timeline prevents failed or overnight transfers.</p>
+      <p>Use the calculator above to estimate your upload time using your actual upstream speed from a speed test. The chart below shows typical outcomes at common speeds.</p>
     </section>
 
-    <!-- Speed Chart -->
-    <section id="speeds" class="content-section">
+    <!-- Real-World Examples -->
+    <section id="examples" class="content-section">
       <h2>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
         </svg>
-        1GB Upload Times by Speed
+        100GB Upload Time Examples
       </h2>
+      <p>Here's how long a 100GB file takes to upload on different upload speeds:</p>
+
       <table style="width: 100%; margin: 1.5rem 0; border-collapse: collapse;">
         <thead>
           <tr style="background: #f1f5f9;">
             <th style="padding: 0.75rem; text-align: left;">Upload Speed</th>
             <th style="padding: 0.75rem; text-align: left;">Time</th>
+            <th style="padding: 0.75rem; text-align: left;">Notes</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td style="padding: 0.75rem;">10 Mbps</td>
-            <td style="padding: 0.75rem;">~ 13m 39s</td>
+            <td style="padding: 0.75rem;">~ 22h 46m</td>
+            <td style="padding: 0.75rem;">Cable upload bottleneck</td>
           </tr>
           <tr style="background: #f8fafc;">
             <td style="padding: 0.75rem;">25 Mbps</td>
-            <td style="padding: 0.75rem;">~ 5m 28s</td>
+            <td style="padding: 0.75rem;">~ 9h 06m</td>
+            <td style="padding: 0.75rem;">Workday + overnight</td>
           </tr>
           <tr>
             <td style="padding: 0.75rem;">50 Mbps</td>
-            <td style="padding: 0.75rem;">~ 2m 44s</td>
+            <td style="padding: 0.75rem;">~ 4h 33m</td>
+            <td style="padding: 0.75rem;">Manageable overnight</td>
           </tr>
           <tr style="background: #f8fafc;">
             <td style="padding: 0.75rem;">100 Mbps</td>
-            <td style="padding: 0.75rem;">~ 1m 22s</td>
+            <td style="padding: 0.75rem;">~ 2h 17m</td>
+            <td style="padding: 0.75rem;">Fast fiber upload</td>
           </tr>
           <tr>
             <td style="padding: 0.75rem;">500 Mbps</td>
-            <td style="padding: 0.75rem;">~ 16s</td>
+            <td style="padding: 0.75rem;">~ 27m 18s</td>
+            <td style="padding: 0.75rem;">Pro fiber lines</td>
           </tr>
           <tr style="background: #f8fafc;">
             <td style="padding: 0.75rem;">1 Gbps</td>
-            <td style="padding: 0.75rem;">~ 8s</td>
+            <td style="padding: 0.75rem;">~ 13m 39s</td>
+            <td style="padding: 0.75rem;">Data center uplink</td>
           </tr>
         </tbody>
       </table>
+
+      <p><strong>Note:</strong> These are theoretical estimates. Actual upload speeds may vary due to ISP shaping, Wi-Fi signal quality, and server-side throttling.</p>
     </section>
 
-    <!-- Common Scenarios -->
+    <!-- Optimization Tips -->
     <section class="content-section">
-      <h2>Common 1GB Upload Scenarios</h2>
-      <div class="tips-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-        <div class="tip-card">
-          <h3>Photo batch upload</h3>
-          <p>Roughly 200-400 high-res photos synced to cloud storage.</p>
-        </div>
-        <div class="tip-card">
-          <h3>Short HD video</h3>
-          <p>A 5-10 minute 1080p video export for sharing or review.</p>
-        </div>
-        <div class="tip-card">
-          <h3>App build artifact</h3>
-          <p>Mobile builds or release archives for QA teams.</p>
-        </div>
-        <div class="tip-card">
-          <h3>Project zip file</h3>
-          <p>Design files, docs, and assets bundled together.</p>
-        </div>
-      </div>
-    </section>
+      <h2>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 0 0-3.16 19.47c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.13-1.11-1.43-1.11-1.43-.91-.64.07-.63.07-.63 1 .07 1.52 1.03 1.52 1.03 .9 1.54 2.36 1.1 2.94.84 .09-.66.35-1.1.63-1.35-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.44 9.44 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02 .55 1.38.2 2.4.1 2.65 .64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94 .36.31.69.92.69 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" />
+        </svg>
+        Tips for Faster 100GB Uploads
+      </h2>
 
-    <!-- Tips -->
-    <section class="content-section">
-      <h2>Tips to Speed Up Uploads</h2>
       <div class="tips-grid">
         <div class="tip-card">
-          <h3>Use Ethernet</h3>
-          <p>Wired connections are more stable and avoid Wi-Fi interference.</p>
+          <h3>Use Wired Ethernet</h3>
+          <p>Eliminate Wi-Fi interference and packet loss that slow large uploads.</p>
         </div>
+
         <div class="tip-card">
-          <h3>Pause Heavy Apps</h3>
-          <p>Stop cloud syncs or video calls that compete for upstream bandwidth.</p>
+          <h3>Pick Off-Peak Hours</h3>
+          <p>Upload overnight to avoid congestion and ISP traffic shaping.</p>
         </div>
+
         <div class="tip-card">
-          <h3>Schedule Off-Peak</h3>
-          <p>Upload when the network is quiet to reduce congestion.</p>
+          <h3>Enable Resumable Uploads</h3>
+          <p>Use tools with resume support so interruptions do not restart from zero.</p>
         </div>
+
         <div class="tip-card">
-          <h3>Enable Resume</h3>
-          <p>Use tools that support resumable uploads in case of interruptions.</p>
+          <h3>Segment the File</h3>
+          <p>Split the archive into smaller parts so you can parallelize or retry specific chunks.</p>
+        </div>
+
+        <div class="tip-card">
+          <h3>Pause Other Upstream Traffic</h3>
+          <p>Stop video calls, cloud syncs, or seed uploads while transferring the big file.</p>
+        </div>
+
+        <div class="tip-card">
+          <h3>Check Router QoS</h3>
+          <p>Prioritize your device or disable strict QoS rules that cap upload throughput.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Ad Placeholder -->
+    <div class="ad-space">
+    </div>
+
+    <!-- FAQ Section -->
     <section id="faq" class="content-section">
-      <h2>Upload FAQs</h2>
+      <h2>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        Frequently Asked Questions
+      </h2>
+
       <div class="faq-grid">
         <div class="faq-item">
           <button class="faq-question">
-            <span class="faq-q-text">How long does a 1GB upload take at 10 Mbps?</span>
+            <span class="faq-q-text">Why is my upload slower than download?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>About 13m 39s at a steady 10 Mbps upload speed.</p>
+            <p>Most plans are asymmetrical, offering much lower upstream bandwidth. Cable often tops out at 10-40 Mbps upload, while fiber plans may be symmetrical. Always enter your measured upload speed.</p>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question">
-            <span class="faq-q-text">Is 1GB a lot to upload?</span>
+            <span class="faq-q-text">Can I upload while doing other tasks?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>It is manageable on most connections, but slower upload speeds can still take 10-20 minutes.</p>
+            <p>You can, but other upstream-heavy tasks (video calls, cloud syncs) will extend the upload time. Pausing them yields the most accurate estimate.</p>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question">
-            <span class="faq-q-text">Can I upload while using the internet?</span>
+            <span class="faq-q-text">Does compression help?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Yes, but video calls or cloud syncs can slow the upload. Pause heavy apps for best results.</p>
+            <p>Yes, if the data compresses well. RAW video and already compressed media will see minor gains, while documents and project files can shrink significantly.</p>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question">
-            <span class="faq-q-text">What speed should I enter?</span>
+            <span class="faq-q-text">What if my upload fails halfway?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Use the upload value from a recent speed test, not the advertised download speed.</p>
+            <p>Use resumable upload tools (S3 multipart, Google Drive resumable, rsync) so interrupted uploads continue from the last completed chunk.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-space">
+    </div>
 
   </main>
 
@@ -385,14 +427,14 @@
       </div>
           <span class="brand-text">HowLongToDownload</span>
         </div>
-        <p class="footer-description">Estimate upload and download times instantly with our free, accurate calculator.</p>
+        <p class="footer-description">Calculate your upload and download times instantly with our free, accurate calculator.</p>
       </div>
 
       <div class="footer-links">
         <div class="footer-column">
           <h4>Product</h4>
-          <a href="#calculator">Calculator</a>
-          <a href="#speeds">Speed Chart</a>
+          <a href="index.html#calculator">Calculator</a>
+          <a href="#examples">Examples</a>
           <a href="#faq">FAQ</a>
         </div>
       </div>
@@ -405,9 +447,11 @@
     </div>
   </footer>
 
-  <script src="../assets/app.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
+
 
 
 
