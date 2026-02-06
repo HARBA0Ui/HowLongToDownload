@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free download time estimator calculator. Calculate how long your downloads will take based on file size and download speed.">
+  <title>HowLongToDownload | Download Time & Network Calculator</title>
+  <link rel="stylesheet" href="../assets/app.css">
+
+  <link rel="canonical" href="https://example.com/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="HowLongToDownload | Download Time & Network Calculator">
+  <meta property="og:description" content="Free download time estimator calculator. Calculate how long your downloads will take based on file size and download speed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:site_name" content="HowLongToDownload">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HowLongToDownload | Download Time & Network Calculator">
+  <meta name="twitter:description" content="Free download time estimator calculator. Calculate how long your downloads will take based on file size and download speed.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is download time calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Download time is calculated using the formula: Download Time (seconds) = (File Size in MB x 8) / Speed in Mbps. This converts the file size to megabits and divides by your connection speed to get the time in seconds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Mbps and MBps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mbps (megabits per second) is used to measure download speed. MBps (megabytes per second) is used to measure file transfer speeds. 1 byte = 8 bits, so 100 Mbps = 12.5 MBps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my actual download time different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several factors can affect actual download speed: network congestion, server limitations, background applications using bandwidth, Wi-Fi interference, and ISP throttling. This calculator assumes consistent, optimal conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check my download speed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use free tools like Speedtest.net, Fast.com, or Google's built-in speed test. These services measure your connection speed in Mbps. For the most accurate result, test when your network is relatively quiet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What download speed do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For basic browsing, 5-10 Mbps is sufficient. For streaming HD video, 15-25 Mbps is recommended. For 4K streaming and gaming, aim for 25-50 Mbps. For multiple users or large downloads, 100+ Mbps is ideal."
+      }
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HowLongToDownload",
+  "url": "https://example.com/"
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HowLongToDownload",
+  "url": "https://example.com/"
+}
+  </script>
+</head>
+<body>
+  <!-- Modern Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+              <div class="brand-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" />
+          <path d="M16 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M12.5 15.5L16 19l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M21.5 9.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+        <span class="brand-text">HowLongTo<span class="brand-accent">Download</span></span>
+      </a>
+      
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-menu">
+        <a href="index.html#calculator" class="nav-link">Download Calculator</a>
+        <a href="upload-time-calculator.html" class="nav-link">Upload Calculator</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 100px;">
+    <!-- Main Calculator -->
+    <section id="calculator" class="calculator-section">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18"/>
+            <path d="M9 21V9"/>
+          </svg>
+          <span>Calculator</span>
+        </div>
+        <h1 class="section-title">Download Time Calculator</h1>
+        <p class="section-subtitle">Enter your file size and download speed to get instant, accurate results</p>
+      </div>
+      
+      <div class="calculator-card">
+        <form id="calculator-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="file-size">
+                <svg class="label-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                  <polyline points="13 2 13 9 20 9"/>
+                </svg>
+                File Size
+              </label>
+              <div class="input-group">
+                <input type="number" id="file-size" name="file-size" placeholder="100" min="0.01" step="0.01" required>
+                <select id="unit" name="unit" class="unit-select">
+                  <option value="MB">MB</option>
+                  <option value="GB" selected>GB</option>
+                  <option value="TB">TB</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="speed">
+                <svg class="label-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                Download Speed
+              </label>
+              <div class="input-group">
+                <input type="number" id="speed" name="speed" placeholder="100" min="0.01" step="0.1" value="100">
+                <span class="input-suffix">Mbps</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="speed-presets-section">
+            <p class="presets-label">Quick presets:</p>
+            <div class="speed-presets">
+              <button type="button" class="preset-btn" data-speed="dial">
+                <svg class="preset-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4"/>
+                  <path d="M12 18v4"/>
+                  <path d="M4.93 4.93l2.83 2.83"/>
+                  <path d="M16.24 16.24l2.83 2.83"/>
+                  <path d="M2 12h4"/>
+                  <path d="M18 12h4"/>
+                  <path d="M4.93 19.07l2.83-2.83"/>
+                  <path d="M16.24 7.76l2.83-2.83"/>
+                </svg>
+                <span class="preset-name">56K Dial-up</span>
+                <span class="preset-speed">0.056 Mbps</span>
+              </button>
+              <button type="button" class="preset-btn" data-speed="broadband">
+                <svg class="preset-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span class="preset-name">Broadband</span>
+                <span class="preset-speed">10 Mbps</span>
+              </button>
+              <button type="button" class="preset-btn active" data-speed="fast">
+                <svg class="preset-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                <span class="preset-name">Cable</span>
+                <span class="preset-speed">100 Mbps</span>
+              </button>
+              <button type="button" class="preset-btn" data-speed="very_fast">
+                <svg class="preset-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <span class="preset-name">Fiber</span>
+                <span class="preset-speed">500 Mbps</span>
+              </button>
+              <button type="button" class="preset-btn" data-speed="gigabit">
+                <svg class="preset-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span class="preset-name">Gigabit</span>
+                <span class="preset-speed">1000 Mbps</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" id="btn-calculate" class="btn-calculate">
+            <span class="btn-text">Calculate Download Time</span>
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Result Display -->
+        <div id="result" class="result">
+          <div class="result-header">
+            <h3>Your Download Time</h3>
+          </div>
+          <div class="result-content">
+            <div class="result-main">
+              <div class="result-time">0 seconds</div>
+              <div class="result-eta">Download will finish at approximately --:-- AM</div>
+            </div>
+            <div class="result-recommendation">
+              <svg class="rec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              <span class="rec-text">Should be quick!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span>FAQ</span>
+        </div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about download times</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">How is download time calculated?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Download time is calculated using the formula: <strong>Download Time (seconds) = (File Size in MB x 8) / Speed in Mbps</strong>. This converts the file size to megabits and divides by your connection speed to get the time in seconds.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">What's the difference between Mbps and MBps?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Mbps</strong> (megabits per second) is used to measure download speed. <strong>MBps</strong> (megabytes per second) is used to measure file transfer speeds. 1 byte = 8 bits, so 100 Mbps = 12.5 MBps.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Why is my actual download time different?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Several factors can affect actual download speed: network congestion, server limitations, background applications using bandwidth, Wi-Fi interference, and ISP throttling. This calculator assumes consistent, optimal conditions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">How do I check my download speed?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Use free tools like Speedtest.net, Fast.com, or Google's built-in speed test. These services measure your connection speed in Mbps. For the most accurate result, test when your network is relatively quiet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">What download speed do I need?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>For basic browsing, 5-10 Mbps is sufficient. For streaming HD video, 15-25 Mbps is recommended. For 4K streaming and gaming, aim for 25-50 Mbps. For multiple users or large downloads, 100+ Mbps is ideal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+                <div class="brand-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" />
+          <path d="M16 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M12.5 15.5L16 19l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M21.5 9.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+          <span class="brand-text">HowLongToDownload</span>
+        </div>
+        <p class="footer-description">Calculate your download times instantly with our free, accurate calculator. Perfect for estimating file downloads, streaming, and network performance.</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <a href="#calculator">Calculator</a>
+          <a href="#popular">Popular Downloads</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 HowLongToDownload. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+
+
+

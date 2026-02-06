@@ -1,0 +1,12 @@
+# Download Time Estimator - robots.txt
+# Allows all crawlers for maximum SEO visibility
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://example.com/sitemap.xml
+
+# Crawl-delay for heavy crawlers (optional)
+# Adjust based on server load
+Crawl-delay: 1
