@@ -1201,6 +1201,16 @@ select:focus {
     padding-right: var(--spacing-sm);
   }
 
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .unit-select {
+    width: 100%;
+    min-width: 0;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
