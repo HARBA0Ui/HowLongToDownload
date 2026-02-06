@@ -11,6 +11,17 @@ const SPEED_PRESETS = {
   gigabit: 1000
 };
 
+// Streaming bitrate presets in Mbps
+const STREAMING_PRESETS = {
+  "720p30": 3,
+  "720p60": 4.5,
+  "1080p30": 5,
+  "1080p60": 8,
+  "1440p60": 12,
+  "4k30": 16,
+  "4k60": 25
+};
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
   setupMobileNav();
@@ -20,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupSmoothScroll();
   setupScrollAnimations();
   checkForPrefilledValues();
+  setupStreamingCalculator();
 });
 
 /**
@@ -82,6 +94,32 @@ function setupCalculator() {
       if (e.key === 'Enter') {
         e.preventDefault();
         calculateDownloadTime();
+      }
+    });
+  });
+}
+
+/**
+ * Setup streaming calculator listeners
+ */
+function setupStreamingCalculator() {
+  const form = document.getElementById('streaming-form');
+  if (!form) return;
+  
+  const calculateBtn = document.getElementById('btn-streaming');
+  if (calculateBtn) {
+    calculateBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      calculateStreamingReadiness();
+    });
+  }
+  
+  const inputs = form.querySelectorAll('input[type="number"], select');
+  inputs.forEach(input => {
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        calculateStreamingReadiness();
       }
     });
   });
@@ -253,6 +291,50 @@ function checkForPrefilledValues() {
   if (fileSizeInput.value) {
     setTimeout(() => calculateDownloadTime(), 500);
   }
+}
+
+/**
+ * Streaming readiness calculator
+ */
+function calculateStreamingReadiness() {
+  const speedInput = document.getElementById('streaming-speed');
+  const profileSelect = document.getElementById('streaming-profile');
+  const resultDiv = document.getElementById('streaming-result');
+  
+  if (!speedInput || !profileSelect || !resultDiv) return;
+  
+  const uploadSpeed = parseFloat(speedInput.value);
+  const profileKey = profileSelect.value;
+  const targetBitrate = STREAMING_PRESETS[profileKey];
+  
+  if (!uploadSpeed || uploadSpeed <= 0) {
+    showNotification('Please enter a valid upload speed', 'error');
+    speedInput.focus();
+    return;
+  }
+  
+  const headroomMultiplier = 1.3;
+  const requiredSpeed = targetBitrate * headroomMultiplier;
+  const isReady = uploadSpeed >= requiredSpeed;
+  
+  const statusEl = resultDiv.querySelector('.result-time');
+  const detailEl = resultDiv.querySelector('.result-eta');
+  const recText = resultDiv.querySelector('.rec-text');
+  
+  if (statusEl) {
+    statusEl.textContent = isReady ? 'Ready to Stream' : 'Not Enough Upload';
+  }
+  if (detailEl) {
+    detailEl.textContent = `Target: ${targetBitrate.toFixed(1)} Mbps • Recommended: ${requiredSpeed.toFixed(1)} Mbps • Yours: ${uploadSpeed.toFixed(1)} Mbps`;
+  }
+  if (recText) {
+    recText.textContent = isReady
+      ? 'You have enough upload speed for this stream profile.'
+      : 'Lower the resolution/FPS or upgrade your upload speed for smoother streaming.';
+  }
+  
+  resultDiv.classList.add('visible');
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 /**

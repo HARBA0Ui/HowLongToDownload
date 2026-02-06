@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check if your upload speed can stream smoothly on YouTube at 720p, 1080p, or 4K.">
+  <meta name="author" content="HowLongToDownload">
+  <title>YouTube Streaming Calculator | HowLongToDownload</title>
+  <link rel="canonical" href="https://example.com/youtube-streaming-calculator.html">
+  <link rel="stylesheet" href="./app.css">
+
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="YouTube Streaming Calculator | HowLongToDownload">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/youtube-streaming-calculator.html">
+  <meta property="og:site_name" content="HowLongToDownload">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube Streaming Calculator | HowLongToDownload">
+</head>
+<body>
+  <!-- Modern Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" />
+          <path d="M16 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M12.5 15.5L16 19l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M21.5 9.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+        <span class="brand-text">HowLongTo<span class="brand-accent">Download</span></span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-menu">
+        <a href="index.html#calculator" class="nav-link">Download Calculator</a>
+        <a href="upload-time-calculator.html" class="nav-link">Upload Calculator</a>
+        <a href="streaming-calculator.html" class="nav-link">Streaming Test</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg>
+          Back to Calculator
+        </a>
+      </div>
+      <h1 class="page-title" style="text-align: center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4" />
+          <path d="M12 18v4" />
+          <path d="M4.93 4.93l2.83 2.83" />
+          <path d="M16.24 16.24l2.83 2.83" />
+          <path d="M2 12h4" />
+          <path d="M18 12h4" />
+          <path d="M4.93 19.07l2.83-2.83" />
+          <path d="M16.24 7.76l2.83-2.83" />
+        </svg>
+        YouTube Streaming Readiness Calculator
+      </h1>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section class="calculator-section">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18" />
+            <path d="M9 21V9" />
+          </svg>
+          <span>Streaming</span>
+        </div>
+        <h2 class="section-title">Can You Stream on </h2>
+        <p class="page-subtitle">Test if your upload speed meets recommended bitrates for YouTube.</p>
+      </div>
+
+      <div class="calculator-card">
+        <form id="streaming-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="streaming-speed">
+                <svg class="label-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                Upload Speed
+              </label>
+              <div class="input-group">
+                <input type="number" id="streaming-speed" name="streaming-speed" placeholder="15" min="0.1" step="0.1" value="15">
+                <span class="input-suffix">Mbps</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="streaming-profile">
+                <svg class="label-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+                Stream Quality
+              </label>
+              <div class="input-group">
+                <select id="streaming-profile" name="streaming-profile" class="unit-select">
+                  <option value="720p30">720p @ 30fps (3 Mbps)</option>
+                  <option value="720p60">720p @ 60fps (4.5 Mbps)</option>
+                  <option value="1080p30" selected>1080p @ 30fps (5 Mbps)</option>
+                  <option value="1080p60">1080p @ 60fps (8 Mbps)</option>
+                  <option value="1440p60">1440p @ 60fps (12 Mbps)</option>
+                  <option value="4k30">4K @ 30fps (16 Mbps)</option>
+                  <option value="4k60">4K @ 60fps (25 Mbps)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="btn-streaming" class="btn-calculate">
+            <span class="btn-text">Check Streaming Readiness</span>
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </form>
+
+        <div id="streaming-result" class="result">
+          <div class="result-header">
+            <h3>Your Streaming Readiness</h3>
+          </div>
+          <div class="result-content">
+            <div class="result-main">
+              <div class="result-time">--</div>
+              <div class="result-eta">Enter your upload speed to see the results.</div>
+            </div>
+            <div class="result-recommendation">
+              <svg class="rec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span class="rec-text">Streaming recommendations will appear here.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>How This YouTube Streaming Test Works</h2>
+      <p>This test compares your upload speed to common streaming bitrates and adds 30% headroom for stability on YouTube.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Tips for Smoother YouTube Streams</h2>
+      <p>Use Ethernet instead of Wi-Fi, close background uploads, and lower your bitrate if you see dropped frames.</p>
+      <p>For multi-device homes, test your speed when the network is busiest.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">      <div class="brand-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" />
+          <path d="M16 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M12.5 15.5L16 19l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M21.5 9.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>          <span class="brand-text">HowLongToDownload</span>
+        </div>
+        <p class="footer-description">Calculate your download and upload times instantly with our free, accurate calculator.</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <a href="index.html#calculator">Calculator</a>
+          <a href="upload-time-calculator.html">Upload Calculator</a>
+          <a href="streaming-calculator.html">Streaming Test</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 HowLongToDownload. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

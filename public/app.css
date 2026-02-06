@@ -430,6 +430,10 @@ main {
   color: var(--dark);
 }
 
+.title-white {
+  color: white;
+}
+
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--gray);
@@ -1130,11 +1134,14 @@ select:focus {
     transition: all 0.3s ease;
     max-height: calc(100vh - 70px);
     overflow-y: auto;
+    z-index: 1001;
+    pointer-events: none;
   }
   
   .navbar-menu.active {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
   }
   
   .form-row {
